@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-header">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="{{ asset('assets/images/logo/luxoft-new-white.svg') }}" alt="Luxoft - IT, Consulting, Software Company" style="width:103px">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse ps-6" id="navbarNavAltMarkup">
+            {{ menu('main', 'partials/_main_menu.twig') }}
+        </div>
+    </div>
+</nav>

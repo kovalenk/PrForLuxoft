@@ -1,0 +1,17 @@
+{% for item in menu %}
+    <div class="col-lg-2 col-xs-12 mt-0">
+        <h5 class="text-white mb-3 text-20 overline semibold">
+            <a class="text-white" href="{{ item.link }}">{{item.label}}</a>
+        </h5>
+
+        {% if item.submenu is defined %}
+            <ul class="list-unstyled text-muted">
+                {% for item in item.submenu %}
+                    <li class="mb-3 text-14 regular">
+                        <a href="{{ item.link }}">{{item.label}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endfor %}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ htmllang() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png') }}" />
+
+        <title>
+            {%- if record|default and record.title and record.contentType != "homepage" -%}
+                {{- record.title ~ ' | ' -}}
+            {%- endif -%}
+            {{- config.get('general/sitename') -}}
+        </title>
+
+        <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    </head>
+
+    <body class="bd-black">
+        {{ include('partials/_header.twig') }}
+
+        <div class="container-fluid">
+            {% block body %}
+            {% endblock body %}
+        </div>
+
+        {{ include('partials/_footer.twig') }}
+
+        <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    </body>
+</html>
