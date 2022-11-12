@@ -1,0 +1,492 @@
+body {
+  overflow-x: hidden; }
+
+.quotes-section--v1 {
+  position: relative;
+  width: 100%;
+  height: 660px;
+  background-color: #000;
+  background-image: url("../../assets/images/quotes/bg.png"); }
+  @media only screen and (max-width: 700px) {
+    .quotes-section--v1 {
+      height: auto;
+      min-height: 660px;
+      background-image: none; } }
+  .quotes-section--v1 .quotes__wrapper {
+    max-width: 1099px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 16px; }
+    @media only screen and (max-width: 1024px) {
+      .quotes-section--v1 .quotes__wrapper {
+        min-width: 328px;
+        max-width: 1024px;
+        height: 100%; } }
+    @media only screen and (max-width: 700px) {
+      .quotes-section--v1 .quotes__wrapper {
+        padding: 0 16px; } }
+    .quotes-section--v1 .quotes__wrapper .carusel-wrapper--v2 {
+      position: relative; }
+    .quotes-section--v1 .quotes__wrapper .quotes__block {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      margin: auto;
+      z-index: 100;
+      transition: transform .5s, opacity .5s, z-index .5s; }
+      .quotes-section--v1 .quotes__wrapper .quotes__block.quotes--initial, .quotes-section--v1 .quotes__wrapper .quotes__block.quotes--active {
+        opacity: 1;
+        position: relative;
+        z-index: 900; }
+      .quotes-section--v1 .quotes__wrapper .quotes__block.quotes--prev, .quotes-section--v1 .quotes__wrapper .quotes__block.quotes--next {
+        z-index: 800;
+        top: 0; }
+      .quotes-section--v1 .quotes__wrapper .quotes__block.quotes--prev {
+        transform: translateX(-100%); }
+      .quotes-section--v1 .quotes__wrapper .quotes__block.quotes--next {
+        transform: translateX(100%); }
+      .quotes-section--v1 .quotes__wrapper .quotes__block .quotes {
+        padding-top: 48px; }
+        @media only screen and (max-width: 1024px) {
+          .quotes-section--v1 .quotes__wrapper .quotes__block .quotes {
+            width: 30px;
+            height: 24px;
+            margin: 24px 0;
+            padding: 0 0 0 19px; } }
+        @media only screen and (max-width: 700px) {
+          .quotes-section--v1 .quotes__wrapper .quotes__block .quotes {
+            margin: 24px 0 30px;
+            padding: 0; } }
+      .quotes-section--v1 .quotes__wrapper .quotes__block .quotes__content {
+        padding-top: 24px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 36px; }
+        @media only screen and (max-width: 1024px) {
+          .quotes-section--v1 .quotes__wrapper .quotes__block .quotes__content {
+            padding: 0 16px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 130%;
+            color: #FFFFFF; } }
+        @media only screen and (max-width: 700px) {
+          .quotes-section--v1 .quotes__wrapper .quotes__block .quotes__content {
+            width: 100%;
+            padding: 0; } }
+      .quotes-section--v1 .quotes__wrapper .quotes__block .quotes__name {
+        padding-top: 25px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 130%; }
+        @media only screen and (max-width: 1024px) {
+          .quotes-section--v1 .quotes__wrapper .quotes__block .quotes__name {
+            padding-left: 16px;
+            padding-top: 24px;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 130%; } }
+        @media only screen and (max-width: 700px) {
+          .quotes-section--v1 .quotes__wrapper .quotes__block .quotes__name {
+            padding-left: 0; } }
+      .quotes-section--v1 .quotes__wrapper .quotes__block .quotes__position {
+        padding-top: 7px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%; }
+        @media only screen and (max-width: 1024px) {
+          .quotes-section--v1 .quotes__wrapper .quotes__block .quotes__position {
+            padding-left: 16px;
+            padding-top: 8px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 130%; } }
+        @media only screen and (max-width: 700px) {
+          .quotes-section--v1 .quotes__wrapper .quotes__block .quotes__position {
+            padding-left: 0; } }
+    .quotes-section--v1 .quotes__wrapper .arrow-group {
+      display: flex;
+      justify-content: space-between;
+      width: 232px;
+      height: 48px;
+      margin-top: 56px; }
+      @media only screen and (max-width: 1024px) {
+        .quotes-section--v1 .quotes__wrapper .arrow-group {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+          max-width: 100%;
+          height: 48px;
+          margin-top: 24px;
+          padding-left: 16px;
+          padding-bottom: 10px; } }
+      @media only screen and (max-width: 700px) {
+        .quotes-section--v1 .quotes__wrapper .arrow-group {
+          width: 100%;
+          padding: 0;
+          justify-content: flex-start; } }
+      .quotes-section--v1 .quotes__wrapper .arrow-group .buttons-group {
+        display: flex;
+        width: 110px;
+        justify-content: space-between; }
+      .quotes-section--v1 .quotes__wrapper .arrow-group img {
+        width: 17.74px;
+        height: 12px; }
+      .quotes-section--v1 .quotes__wrapper .arrow-group .quotes__pagination {
+        display: flex;
+        flex-direction: row;
+        align-items: center; }
+        @media only screen and (max-width: 1024px) {
+          .quotes-section--v1 .quotes__wrapper .arrow-group .quotes__pagination {
+            display: flex;
+            flex-direction: row;
+            align-items: center; } }
+        @media only screen and (max-width: 700px) {
+          .quotes-section--v1 .quotes__wrapper .arrow-group .quotes__pagination {
+            margin-left: 16px; } }
+      .quotes-section--v1 .quotes__wrapper .arrow-group .quotes__line {
+        cursor: pointer;
+        width: 24px;
+        height: 2px;
+        border-radius: 2px;
+        border: 1px solid #666666;
+        background-color: #666666;
+        margin-left: 8px; }
+        .quotes-section--v1 .quotes__wrapper .arrow-group .quotes__line.quotes--active {
+          margin-left: 8px;
+          border: 1px solid #FFFFFF;
+          background-color: #FFFFFF; }
+      .quotes-section--v1 .quotes__wrapper .arrow-group .carousel__button--next--v1 {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 48px;
+        height: 48px;
+        background: #1A1A1A; }
+      .quotes-section--v1 .quotes__wrapper .arrow-group .carousel__button--prev--v1 {
+        cursor: pointer;
+        transform: rotate(180deg);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 48px;
+        height: 48px;
+        background: #1A1A1A; }
+.quotes-section--v2 {
+  height: 680px; }
+  @media only screen and (max-width: 1024px) {
+    .quotes-section--v2 {
+      padding: 0 32px; } }
+  @media only screen and (max-width: 700px) {
+    .quotes-section--v2 {
+      padding: 0 16px;
+      height: auto;
+      min-height: 680px; } }
+  .quotes-section--v2 .quotes__wrapper {
+    max-width: 938px;
+    height: auto;
+    padding: 100px 24px;
+    margin: auto; }
+    .quotes-section--v2 .quotes__wrapper .carusel-wrapper--v2 {
+      position: relative; }
+    .quotes-section--v2 .quotes__wrapper .quotes__block {
+      width: auto;
+      height: auto;
+      background: #1A1A1A;
+      border-radius: 14px;
+      transition: all ease 0.5s; }
+      @media only screen and (max-width: 700px) {
+        .quotes-section--v2 .quotes__wrapper .quotes__block {
+          padding-right: 16px; } }
+      .quotes-section--v2 .quotes__wrapper .quotes__block .quotes {
+        padding-top: 54px;
+        padding-left: 50px; }
+        @media only screen and (max-width: 700px) {
+          .quotes-section--v2 .quotes__wrapper .quotes__block .quotes {
+            padding-left: 16px; } }
+      .quotes-section--v2 .quotes__wrapper .quotes__block .quotes__content {
+        padding-top: 33px;
+        padding-left: 48px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 130%; }
+        @media only screen and (max-width: 1024px) {
+          .quotes-section--v2 .quotes__wrapper .quotes__block .quotes__content {
+            padding: 24px 16px 0;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 130%;
+            color: #FFFFFF; } }
+        @media only screen and (max-width: 700px) {
+          .quotes-section--v2 .quotes__wrapper .quotes__block .quotes__content {
+            padding: 24px 0 0 16px; } }
+      .quotes-section--v2 .quotes__wrapper .quotes__block .quotes__name {
+        padding-top: 34px;
+        padding-left: 48px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 130%; }
+        @media only screen and (max-width: 700px) {
+          .quotes-section--v2 .quotes__wrapper .quotes__block .quotes__name {
+            padding-left: 16px; } }
+      .quotes-section--v2 .quotes__wrapper .quotes__block .quotes__position {
+        padding-left: 48px;
+        padding-top: 8px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%; }
+        @media only screen and (max-width: 700px) {
+          .quotes-section--v2 .quotes__wrapper .quotes__block .quotes__position {
+            padding-left: 16px; } }
+      .quotes-section--v2 .quotes__wrapper .quotes__block.quotes--initial2, .quotes-section--v2 .quotes__wrapper .quotes__block.quotes--active2 {
+        display: block;
+        width: auto;
+        height: auto;
+        padding-bottom: 48px;
+        background: #1A1A1A;
+        border-radius: 14px;
+        margin-right: 32px;
+        opacity: 1;
+        position: relative;
+        z-index: 900; }
+        @media only screen and (max-width: 1024px) {
+          .quotes-section--v2 .quotes__wrapper .quotes__block.quotes--initial2, .quotes-section--v2 .quotes__wrapper .quotes__block.quotes--active2 {
+            margin-right: 0; } }
+      .quotes-section--v2 .quotes__wrapper .quotes__block.quotes--prev2 {
+        width: auto;
+        height: auto;
+        top: 0;
+        position: absolute;
+        z-index: 800;
+        transform: translate(-200%); }
+      .quotes-section--v2 .quotes__wrapper .quotes__block.quotes--next2 {
+        top: 0;
+        position: absolute;
+        width: 948px;
+        height: auto;
+        padding-bottom: 48px;
+        background: #1A1A1A;
+        border-radius: 14px;
+        margin-left: 24px;
+        margin-top: 0;
+        position: absolute;
+        display: block;
+        z-index: 800;
+        opacity: 0.5;
+        transform: translate(100%);
+        -webkit-mask-image: linear-gradient(90deg, #1a1a1a, rgba(26, 26, 26, 0)); }
+    .quotes-section--v2 .quotes__wrapper .arrow-group {
+      display: flex;
+      justify-content: space-between;
+      width: 232px;
+      height: 48px;
+      margin-top: 56px; }
+      @media only screen and (max-width: 1024px) {
+        .quotes-section--v2 .quotes__wrapper .arrow-group {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+          max-width: 100%;
+          height: 48px;
+          margin-top: 24px;
+          padding-bottom: 10px; } }
+      @media only screen and (max-width: 700px) {
+        .quotes-section--v2 .quotes__wrapper .arrow-group {
+          width: 100%;
+          padding: 0;
+          justify-content: flex-start; } }
+      .quotes-section--v2 .quotes__wrapper .arrow-group .buttons-group {
+        display: flex; }
+      .quotes-section--v2 .quotes__wrapper .arrow-group img {
+        width: 17.74px;
+        height: 12px; }
+      .quotes-section--v2 .quotes__wrapper .arrow-group .carousel__button--next--v2 {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 48px;
+        height: 48px;
+        background: #1A1A1A; }
+      .quotes-section--v2 .quotes__wrapper .arrow-group .carousel__button--prev--v2 {
+        cursor: pointer;
+        transform: rotate(180deg);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 48px;
+        height: 48px;
+        background: #1A1A1A;
+        margin-right: 8px; }
+      .quotes-section--v2 .quotes__wrapper .arrow-group .quotes__pagination {
+        display: flex;
+        flex-direction: row;
+        align-items: center; }
+        .quotes-section--v2 .quotes__wrapper .arrow-group .quotes__pagination .quotes__line {
+          cursor: pointer;
+          width: 24px;
+          height: 2px;
+          border-radius: 2px;
+          border: 1px solid #666666;
+          background-color: #666666;
+          margin-left: 8px; }
+        .quotes-section--v2 .quotes__wrapper .arrow-group .quotes__pagination .quotes__line.quotes--active2 {
+          margin-left: 8px;
+          border: 1px solid #FFFFFF;
+          background-color: #FFFFFF; }
+  .quotes-section--v2 .quotes__block:first-child.quotes--next {
+    width: 948px;
+    height: auto;
+    background: #1A1A1A;
+    border-radius: 14px;
+    margin-right: 32px;
+    position: absolute;
+    display: block;
+    transform: translateX(100%);
+    z-index: 800;
+    padding-bottom: 48px;
+    -webkit-mask-image: linear-gradient(90deg, #1a1a1a, rgba(26, 26, 26, 0)); }
+@media only screen and (max-width: 1024px) {
+  .quotes-section .carusel-wrapper--v2 {
+    position: relative; }
+  .quotes-section--v1 .quotes__wrapper .carusel-wrapper--v1 {
+    position: relative; }
+  .quotes-section--v1 .quotes__wrapper .quotes__block {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    z-index: 100;
+    transition: transform .5s, opacity .5s, z-index .5s; }
+    .quotes-section--v1 .quotes__wrapper .quotes__block.quotes--initial, .quotes-section--v1 .quotes__wrapper .quotes__block.quotes--active {
+      opacity: 1;
+      position: relative;
+      z-index: 900; }
+    .quotes-section--v1 .quotes__wrapper .quotes__block.quotes--prev, .quotes-section--v1 .quotes__wrapper .quotes__block.quotes--next {
+      z-index: 800; }
+    .quotes-section--v1 .quotes__wrapper .quotes__block.quotes--prev {
+      transform: translateX(-100%); }
+    .quotes-section--v1 .quotes__wrapper .quotes__block.quotes--next {
+      transform: translateX(100%); }
+  .quotes-section--v1 .quotes__wrapper .arrow-group .buttons-group {
+    display: flex; }
+  .quotes-section--v1 .quotes__wrapper .arrow-group .carousel__button--next--v1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 48px;
+    height: 48px;
+    background: #1A1A1A; }
+  .quotes-section--v1 .quotes__wrapper .arrow-group .carousel__button--prev--v1 {
+    transform: rotate(180deg);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 48px;
+    height: 48px;
+    background: #1A1A1A;
+    margin-right: 16px; }
+  .quotes-section--v1 .quotes__wrapper .arrow-group .quotes__line {
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    border: 1px solid #666666;
+    background-color: #666666;
+    margin-left: 8px; }
+    .quotes-section--v1 .quotes__wrapper .arrow-group .quotes__line.quotes--active {
+      border: 1px solid #FFFFFF;
+      background-color: #FFFFFF; }
+  .quotes-section--v2 .quotes__wrapper {
+    padding: 0 16px;
+    padding: 0;
+    min-width: 328px;
+    height: 100%;
+    margin: 0 auto; }
+    .quotes-section--v2 .quotes__wrapper .carusel-wrapper--v2 {
+      position: relative; }
+    .quotes-section--v2 .quotes__wrapper .block {
+      width: calc(100% - 20px);
+      background: #1A1A1A;
+      border-radius: 14px;
+      padding-bottom: 10px;
+      opacity: 0;
+      position: absolute;
+      z-index: 100;
+      transition: transform .5s, opacity .5s, z-index .5s; }
+      .quotes-section--v2 .quotes__wrapper .block.quotes--initial2, .quotes-section--v2 .quotes__wrapper .block.quotes--active2 {
+        margin: 48px 16px;
+        opacity: 1;
+        position: relative;
+        z-index: 900; }
+      .quotes-section--v2 .quotes__wrapper .block.quotes--prev2, .quotes-section--v2 .quotes__wrapper .block.quotes--next2 {
+        z-index: 800; }
+      .quotes-section--v2 .quotes__wrapper .block.quotes--prev2 {
+        transform: translateX(-100%); }
+      .quotes-section--v2 .quotes__wrapper .block.quotes--next2 {
+        transform: translateX(100%); }
+      .quotes-section--v2 .quotes__wrapper .block .quotes {
+        width: 30px;
+        height: 24px;
+        padding-top: 30px;
+        padding-left: 19px; }
+      .quotes-section--v2 .quotes__wrapper .block .quotes__name {
+        padding-left: 16px;
+        padding-top: 24px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 130%; }
+      .quotes-section--v2 .quotes__wrapper .block .quotes__position {
+        padding-left: 16px;
+        padding-top: 8px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%; }
+    .quotes-section--v2 .quotes__wrapper .arrow-group .buttons-group {
+      display: flex; }
+    .quotes-section--v2 .quotes__wrapper .arrow-group .carousel__button--next--v2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      width: 48px;
+      height: 48px;
+      background: #1A1A1A; }
+    .quotes-section--v2 .quotes__wrapper .arrow-group .carousel__button--prev--v2 {
+      transform: rotate(180deg);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      width: 48px;
+      height: 48px;
+      background: #1A1A1A;
+      margin-right: 8px; }
+    .quotes-section--v2 .quotes__wrapper .arrow-group .quotes__pagination {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 24px; }
+      .quotes-section--v2 .quotes__wrapper .arrow-group .quotes__pagination .quotes__line {
+        width: 24px;
+        height: 2px;
+        border-radius: 2px;
+        border: 1px solid #666666;
+        background-color: #666666;
+        margin-left: 8px; }
+        .quotes-section--v2 .quotes__wrapper .arrow-group .quotes__pagination .quotes__line.quotes--active2 {
+          border: 1px solid #FFFFFF;
+          background-color: #FFFFFF; }
+        .quotes-section--v2 .quotes__wrapper .arrow-group .quotes__pagination .quotes__line:last-child {
+          margin-right: 24px; } }
+
+/*# sourceMappingURL=quotes.css.map */
