@@ -21445,6 +21445,104 @@ h5, .h5 {
     color: #FBF9FF;
     box-shadow: none; }
 
+.accordion-section {
+  padding: 60px 120px; }
+  .accordion-section * {
+    color: white; }
+  @media (max-width: 900px) {
+    .accordion-section {
+      padding: 60px; } }
+  @media (max-width: 700px) {
+    .accordion-section {
+      padding: 40px 20px; } }
+  .accordion-section .accordion-section__container {
+    max-width: 900px;
+    margin: auto; }
+    .accordion-section .accordion-section__container .container__title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 120%; }
+      @media (max-width: 700px) {
+        .accordion-section .accordion-section__container .container__title {
+          font-size: 24px; } }
+    .accordion-section .accordion-section__container .container__article {
+      margin-top: 32px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 130%; }
+      @media (max-width: 700px) {
+        .accordion-section .accordion-section__container .container__article {
+          font-size: 18px; } }
+    .accordion-section .accordion-section__container .container__accordion {
+      margin-top: 32px; }
+      .accordion-section .accordion-section__container .container__accordion .accordion__row {
+        cursor: pointer;
+        padding: 24px 0;
+        border-color: #ffffff;
+        border-style: solid;
+        border-width: 1px 0 0; }
+        @media (max-width: 700px) {
+          .accordion-section .accordion-section__container .container__accordion .accordion__row {
+            padding: 20px 8px; } }
+        .accordion-section .accordion-section__container .container__accordion .accordion__row .row__title {
+          position: relative;
+          margin: 0;
+          padding-right: 30px;
+          font-weight: 400;
+          font-size: 28px;
+          line-height: 130%; }
+          @media (max-width: 700px) {
+            .accordion-section .accordion-section__container .container__accordion .accordion__row .row__title {
+              padding-right: 35px;
+              font-size: 22px; } }
+          .accordion-section .accordion-section__container .container__accordion .accordion__row .row__title:after {
+            content: '';
+            background-image: url("../images/accordion/plus.svg");
+            background-size: 16px;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            width: 30px;
+            height: 100%; }
+            @media (max-width: 700px) {
+              .accordion-section .accordion-section__container .container__accordion .accordion__row .row__title:after {
+                background-size: 20px; } }
+        .accordion-section .accordion-section__container .container__accordion .accordion__row .row__desc {
+          display: none;
+          margin: 24px 0 0;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 130%; }
+          @media (max-width: 700px) {
+            .accordion-section .accordion-section__container .container__accordion .accordion__row .row__desc {
+              font-size: 18px; } }
+        .accordion-section .accordion-section__container .container__accordion .accordion__row--open .row__title::after {
+          background-image: url("../images/accordion/minus.svg");
+          height: 85%; }
+        .accordion-section .accordion-section__container .container__accordion .accordion__row--open .row__desc {
+          display: block; }
+        .accordion-section .accordion-section__container .container__accordion .accordion__row:last-child {
+          border-width: 1px 0; }
+  .accordion-section.accordion-section--white {
+    background-color: white; }
+    .accordion-section.accordion-section--white * {
+      color: #000000; }
+    .accordion-section.accordion-section--white .container__accordion .accordion__row {
+      border-color: #000000; }
+      .accordion-section.accordion-section--white .container__accordion .accordion__row .row__title:after {
+        background-image: url("../images/accordion/plus-black.svg"); }
+      .accordion-section.accordion-section--white .container__accordion .accordion__row--open .row__title::after {
+        background-image: url("../images/accordion/minus-black.svg"); }
+    .accordion-section.accordion-section--white .accordion__row {
+      border-color: #000000; }
+
 .bg-header {
   background: transparent; }
   .bg-header a {
