@@ -78,16 +78,14 @@
     &__block {
         display: flex;
         gap: 24px;
-        margin: auto;
+        margin: 0 auto 40px;
 
         &-second {
-            margin-top: 40px;
             display: flex;
             gap: 24px;
         }
 
         &-third {
-            margin-top: 80px;
             display: flex;
             gap: 24px;
         }
@@ -190,13 +188,13 @@
             &-second {
                 flex-direction: column;
                 width: 100%;
-                margin: 40px auto 0;
+                margin: 0 auto 40px;
             }
 
             &-third {
                 flex-direction: column;
                 width: 100%;
-                margin: 40px auto 0;
+                margin: 0 auto 40px;
             }
 
             &_button {
