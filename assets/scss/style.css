@@ -21497,7 +21497,8 @@ h5, .h5 {
   .insights__block {
     display: flex;
     gap: 24px;
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+    margin-bottom: 36px; }
   .insights__title {
     margin-bottom: 40px;
     display: flex;
@@ -21565,8 +21566,7 @@ h5, .h5 {
     .insights__title {
       margin: 0px auto 24px; }
     .insights__block {
-      flex-wrap: wrap;
-      gap: 0px; }
+      flex-wrap: wrap; }
       .insights__block-second {
         flex-wrap: wrap;
         gap: 0px;

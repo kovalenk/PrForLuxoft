@@ -72,6 +72,7 @@
         display: flex;
         gap: 24px;
         flex-wrap: nowrap;
+        margin-bottom: 36px;
     }
 
     &__title {
@@ -178,7 +179,6 @@
 
         &__block {
             flex-wrap: wrap;
-            gap: 0px;
 
             &-second {
                 flex-wrap: wrap;
