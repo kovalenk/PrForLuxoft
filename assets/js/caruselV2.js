@@ -8,88 +8,107 @@
     slide = 0,
     moving = true;
     function setInitialClasses() {
-        setTimeout(()=>{
-            const totalItems = items.length
-            items[totalItems - 1].classList.add("quotes--prev2");
-            items[0].classList.add("quotes--active2");
-            items[1].classList.add("quotes--next2");
-            pagination[totalItems - 1]
-            pagination[0].classList.add("quotes--active2");
-            pagination[1].classList.add("quotes--next2");
-        },200)
-        // Targets the previous, current, and next items
-        // This assumes there are at least three items.
+      setTimeout(() => {
+        addNextClasses();
+        addPrevClasses();
+        addActiveClasses(0);
+      }, 200)
+    }
+
+    function removeClasses() {
+      for (let ql = 0; ql < items.length; ql++) {
+        items[ql].classList.remove("quotes--prev2");
+        items[ql].classList.remove("quotes--active2");
+        items[ql].classList.remove("quotes--next2");
       }
-      // Set event listeners
+      for (let ql = 0; ql < pagination.length; ql++) {
+        pagination[ql].classList.remove("quotes--prev2");
+        pagination[ql].classList.remove("quotes--active2");
+        pagination[ql].classList.remove("quotes--next2");
+      }
+    }
+
+    function addNextClasses() {
+      for (let ql = 0; ql < items.length; ql++) {
+        if(slide === (items.length - 1)) {
+          items[0].classList.add("quotes--next2");
+          pagination[0].classList.add("quotes--next2");
+        }
+        if(ql === (slide + 1)) {
+          items[ql].classList.add("quotes--next2");
+          pagination[ql].classList.add("quotes--next2");
+        }
+      }
+    }
+
+    function addPrevClasses() {
+      for (let ql = 0; ql < items.length; ql++) {
+        if(slide) {
+          if (ql === (slide - 1)) {
+            items[ql].classList.add("quotes--prev2");
+            pagination[ql].classList.add("quotes--prev2");
+          }
+        } else {
+          items[items.length - 1].classList.add("quotes--prev2");
+          pagination[items.length - 1].classList.add("quotes--prev2");
+        }
+      }
+    }
+
+    function addActiveClasses(index) {
+      items[index].classList.remove("quotes--next2");
+      items[index].classList.add("quotes--active2");
+      pagination[index].classList.remove("quotes--next2");
+      pagination[index].classList.add("quotes--active2");
+    }
+
+    // Set event listeners
       function setEventListeners() {
-        setTimeout(()=>{
-            var next = d.getElementsByClassName('carousel__button--next--v2')[0],
-            prev = d.getElementsByClassName('carousel__button--prev--v2')[0],
-            firstBlock = d.getElementsByClassName('quotes__line quotes__line--v2')[0],
-            secondBlock = d.getElementsByClassName('quotes__line quotes__line--v2')[1],
-            thirdBlock = d.getElementsByClassName('quotes__line quotes__line--v2')[2];
-            next.addEventListener('click', moveNext);
-            prev.addEventListener('click', movePrev);
-            firstBlock.addEventListener('click', moveToFirst);
-            secondBlock.addEventListener('click', moveToSecond);
-            thirdBlock.addEventListener('click', moveToThird);
-        },100)
-      }
-      function disableInteraction() {
-        // Set 'moving' to true for the same duration as our transition.
-        // (0.5s = 500ms)
-        moving = true;
-        // setTimeout runs its function once after the given time
-        setTimeout(function(){
-          moving = false
-        }, 500);
+        setTimeout(() => {
+          var next = d.getElementsByClassName('carousel__button--next--v2')[0],
+            prev = d.getElementsByClassName('carousel__button--prev--v2')[0];
+          const quotesLines = d.getElementsByClassName('quotes__line quotes__line--v2');
+          for (let ql = 0; ql < quotesLines.length; ql++) {
+            quotesLines[ql].addEventListener('click', () => {
+              if (!moving) {
+                moveCarouselTo(ql);
+              }
+            });
+          }
+          next.addEventListener('click', () => {
+            if (!moving) {
+              const totalItems = items.length
+              if (slide === (totalItems - 1)) {
+                slide = 0;
+              } else {
+                slide++;
+              }
+              moveCarouselTo(slide);
+            }
+          });
+          prev.addEventListener('click', () => {
+            const totalItems = items.length
+
+            if (!moving) {
+              if (slide === 0) {
+                slide = (totalItems - 1);
+              } else {
+                slide--;
+              }
+              moveCarouselTo(slide);
+            }
+          });
+        }, 100)
       }
       function moveCarouselTo(slide) {
 
         // Check if carousel is moving, if not, allow interaction
-        if(!moving) {
+        if (!moving) {
           // temporarily disable interactivity
-          disableInteraction();
-          // Update the "old" adjacent slide2s with "new" ones
-          let newPrevious = slide - 1,
-              newNext = slide + 1,
-              oldPrevious = slide - 2,
-              oldNext = slide + 2;
-          // Test if carousel has more than three items
-          const totalItems = items.length
-
-          if ((totalItems - 1) < 3) {
-            // Checks and updates if the new slide2s are out of bounds
-            if (newPrevious <= 0) {
-              oldPrevious = (totalItems - 1);
-            } else if (newNext >= (totalItems - 1)){
-              oldNext = 0;
-            }
-            // Checks and updates if slide2 is at the beginning/end
-            if (slide === 0) {
-              newPrevious = (totalItems - 1);
-              oldPrevious = (totalItems - 2);
-              oldNext = (slide + 1);
-            } else if (slide === (totalItems -1)) {
-              newPrevious = (slide - 1);
-              newNext = 0;
-              oldNext = 1;
-            }
-            // Now we've worked out where we are and where we're going,
-            // by adding/removing classes we'll trigger the transitions.
-            // Reset old next/prev elements to default classes
-            items[oldPrevious].className = itemClassName;
-            pagination[oldPrevious].className = paginationClassName;
-
-            // Add new classes
-            items[newPrevious].className = itemClassName + " quotes--prev2";
-            items[slide].className = itemClassName + " quotes--active2";
-            items[newNext].className = itemClassName + " quotes--next2";
-
-            pagination[newPrevious].className = paginationClassName + " quotes--prev2";
-            pagination[slide].className = paginationClassName + " quotes--active2";
-            pagination[newNext].className = paginationClassName + " quotes--next2";
-          }
+          removeClasses();
+          addNextClasses();
+          addPrevClasses();
+          addActiveClasses(slide);
         }
       }
       function moveNext() {
