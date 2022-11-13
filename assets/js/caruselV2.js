@@ -30,14 +30,8 @@
 
     function addNextClasses() {
       for (let ql = 0; ql < items.length; ql++) {
-        if(slide === (items.length - 1)) {
-          items[0].classList.add("quotes--next2");
-          pagination[0].classList.add("quotes--next2");
-        }
-        if(ql === (slide + 1)) {
-          items[ql].classList.add("quotes--next2");
-          pagination[ql].classList.add("quotes--next2");
-        }
+        items[ql].classList.add("quotes--next2");
+        pagination[ql].classList.add("quotes--next2");
       }
     }
 
@@ -45,10 +39,14 @@
       for (let ql = 0; ql < items.length; ql++) {
         if(slide) {
           if (ql === (slide - 1)) {
+            items[ql].classList.remove("quotes--next2");
+            pagination[ql].classList.remove("quotes--next2");
             items[ql].classList.add("quotes--prev2");
             pagination[ql].classList.add("quotes--prev2");
           }
         } else {
+          items[items.length - 1].classList.remove("quotes--next2");
+          pagination[items.length - 1].classList.remove("quotes--next2");
           items[items.length - 1].classList.add("quotes--prev2");
           pagination[items.length - 1].classList.add("quotes--prev2");
         }
@@ -56,8 +54,10 @@
     }
 
     function addActiveClasses(index) {
+      items[index].classList.remove("quotes--prev2");
       items[index].classList.remove("quotes--next2");
       items[index].classList.add("quotes--active2");
+      pagination[index].classList.remove("quotes--prev2");
       pagination[index].classList.remove("quotes--next2");
       pagination[index].classList.add("quotes--active2");
     }
@@ -100,73 +100,15 @@
           });
         }, 100)
       }
-      function moveCarouselTo(slide) {
-
-        // Check if carousel is moving, if not, allow interaction
+      function moveCarouselTo(slide_to) {
         if (!moving) {
-          // temporarily disable interactivity
+          slide = slide_to
           removeClasses();
           addNextClasses();
           addPrevClasses();
           addActiveClasses(slide);
         }
       }
-      function moveNext() {
-        // Check if moving
-        if (!moving) {
-          // If it's the last slide2, reset to 0, else +1
-          const totalItems = items.length
-          if (slide === (totalItems - 1)) {
-            slide = 0;
-          } else {
-            slide++;
-          }
-          // Move carousel to updated slide2
-          moveCarouselTo(slide);
-        }
-      }
-      function moveToFirst() {
-        // Check if moving
-        if (!moving) {
-          // If it's the last slide2, reset to 0, else +1
-          // Move carousel to updated slide2
-          moveCarouselTo(0);
-        }
-      }
-      function moveToSecond() {
-        // Check if moving
-        if (!moving) {
-          // If it's the last slide2, reset to 0, else +1
-          // Move carousel to updated slide2
-          moveCarouselTo(1);
-        }
-      }
-      function moveToThird() {
-        // Check if moving
-        if (!moving) {
-          // If it's the last slide2, reset to 0, else +1
-          // Move carousel to updated slide2
-          moveCarouselTo(2);
-        }
-      }
-      // Previous navigation handler
-      function movePrev() {
-        // Check if moving
-        const totalItems = items.length
-
-        if (!moving) {
-          // If it's the first slide2, set as the last slide2, else -1
-          if (slide === 0) {
-            slide = (totalItems - 1);
-          } else {
-            slide--;
-          }
-
-          // Move carousel to updated slide2
-          moveCarouselTo(slide);
-        }
-      }
-
 
       function initCarousel() {
         setInitialClasses();

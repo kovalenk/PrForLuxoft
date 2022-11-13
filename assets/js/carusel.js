@@ -31,14 +31,8 @@
 
     function addNextClassesV1() {
       for (let ql = 0; ql < itemsV1.length; ql++) {
-        if(slideV1 === (itemsV1.length - 1)) {
-          itemsV1[0].classList.add("quotes--next");
-          paginationV1[0].classList.add("quotes--next");
-        }
-        if(ql === (slideV1 + 1)) {
-          itemsV1[ql].classList.add("quotes--next");
-          paginationV1[ql].classList.add("quotes--next");
-        }
+        itemsV1[ql].classList.add("quotes--next");
+        paginationV1[ql].classList.add("quotes--next");
       }
     }
 
@@ -46,10 +40,14 @@
       for (let ql = 0; ql < itemsV1.length; ql++) {
         if(slideV1) {
           if (ql === (slideV1 - 1)) {
+            itemsV1[ql].classList.remove("quotes--next");
+            paginationV1[ql].classList.remove("quotes--next");
             itemsV1[ql].classList.add("quotes--prev");
             paginationV1[ql].classList.add("quotes--prev");
           }
         } else {
+          itemsV1[itemsV1.length - 1].classList.remove("quotes--next");
+          paginationV1[itemsV1.length - 1].classList.remove("quotes--next");
           itemsV1[itemsV1.length - 1].classList.add("quotes--prev");
           paginationV1[itemsV1.length - 1].classList.add("quotes--prev");
         }
@@ -57,8 +55,10 @@
     }
 
     function addActiveClassesV1(index) {
+      itemsV1[index].classList.remove("quotes--prev");
       itemsV1[index].classList.remove("quotes--next");
       itemsV1[index].classList.add("quotes--active");
+      paginationV1[index].classList.remove("quotes--prev");
       paginationV1[index].classList.remove("quotes--next");
       paginationV1[index].classList.add("quotes--active");
     }
@@ -101,9 +101,9 @@
       }, 100)
     }
 
-    function moveCarouselToV1(slideV1) {
+    function moveCarouselToV1(slide_to) {
       if (!moving) {
-        // temporarily disable interactivity
+        slideV1 = slide_to
         removeClassesV1();
         addNextClassesV1();
         addPrevClassesV1();
