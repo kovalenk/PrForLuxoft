@@ -21462,6 +21462,11 @@ h5, .h5 {
     height: 543px;
     max-width: 468px;
     overflow: visible; }
+    @media screen and (max-width: 750px) {
+      .awards-round .swiper {
+        overflow: hidden;
+      }
+    }
     .awards-round .swiper-slide {
       position: relative;
       display: flex;
