@@ -1,3 +1,9 @@
+let isMobile = false;
+if (window.innerWidth <= 750) {
+  isMobile = true;
+}
+
+
 new Swiper('.swiper--v1', {
   // Optional parameters
   direction: 'horizontal',
@@ -26,8 +32,8 @@ new Swiper('.swiper--v2', {
   loop: false,
   centeredSlides: false,
   initialSlide: 0,
-  slidesPerView: 4,
-  slidesPerGroup: 4,
+  slidesPerView: isMobile ? 1 : 4,
+  slidesPerGroup: isMobile ? 1 : 4,
   spaceBetween: 24,
 
   // If we need pagination
